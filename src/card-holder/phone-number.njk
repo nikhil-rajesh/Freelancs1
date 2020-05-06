@@ -1,0 +1,30 @@
+---
+layout: base.njk
+title: Get Started
+---
+
+
+{% set header = { title: 'Confirm the phone number' } %}
+{% include "header.njk" %}
+<div class="header-child-container phone-number-container">
+    <div class="field has-addons has-addons-right">
+        <p class="control">
+            <span class="select is-dark">
+              <select>
+                <option>+968</option>
+                <option>+969</option>
+                <option>+970</option>
+              </select>
+            </span>
+          </p>
+        <div class="control">
+            <input class="input is-dark" type="tel" placeholder="23 123456" />
+        </div>
+    </div>
+    <p>For SMS verification, standard rates may apply</p>
+    <a href="card-holder/otp">
+        <button class="button orange-button is-danger is-medium is-rounded">
+            Done
+        </button>
+    </a>
+</div>

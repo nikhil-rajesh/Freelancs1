@@ -1,0 +1,110 @@
+---
+layout: base.njk
+title: Get Started
+---
+
+
+{% set header = { title: 'Personal Information' } %}
+{% include "header.njk" %}
+<div class="info-container container">
+    <div class="field is-horizontal">
+        <div class="field-body">
+            <div class="field">
+                <p class="control">
+                    <input class="input  is-dark" type="text" placeholder="First Name">
+                </p>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <input class="input  is-dark" type="text" placeholder="Last Name">
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="field is-horizontal">
+        <div class="field-body">
+            <div class="field">
+                <p class="control">
+                    <input class="input  is-dark" type="text" placeholder="Email">
+                </p>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <input class="input  is-dark" type="text" placeholder="Confirm Email">
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="field is-horizontal">
+        <div class="field-body">
+            <div class="field">
+                <p class="control">
+                    <input class="input  is-dark" type="text" placeholder="Password">
+                </p>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <input class="input  is-dark" type="text" placeholder="Confirm Password">
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="field is-horizontal">
+        <div class="field-body">
+            <div class="field">
+                <p class="control" id="date-picker-control">
+                    <input class="input" id="date-picker" type="date" placeholder="Confirm Password">
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="field is-horizontal">
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <div class="select is-dark">
+                        <select>
+                            <option>Choose your country</option>
+                            <option>With options</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="field is-horizontal">
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <div class="select is-dark">
+                        <select>
+                            <option>Choose your province</option>
+                            <option>With options</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="field is-horizontal">
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <div class="select is-dark">
+                        <select>
+                            <option>Choose a State</option>
+                            <option>With options</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <a href="card-holder/personal-info">
+            <button class="button orange-button is-rounded is-danger is-medium ">
+                Done
+            </button>
+        </a>
+    </div>
+</div>

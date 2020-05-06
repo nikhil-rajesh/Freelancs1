@@ -1,0 +1,21 @@
+---
+layout: base.njk
+title: Get Started
+---
+
+
+{% set header = { title: 'Smart Card' } %}
+{% include "header.njk" %}
+<div class="card-number-container header-child-container">
+    <img src="static/card.png" alt="">
+    <div class="field">
+        <div class="control">
+            <input class="input is-info is-rounded" type="tel" placeholder="Enter your Card Number" />
+        </div>
+    </div>
+    <a href="card-holder/phone-number">
+        <button class="button orange-button is-danger is-medium is-rounded">
+            Done
+        </button>
+    </a>
+</div>

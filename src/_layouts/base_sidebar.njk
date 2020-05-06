@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include "head.njk" %}
+    <link rel="stylesheet" href="static/app.compiled.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+    <div class="sidebar-buttons">
+    </div>
+    <input type="checkbox" id="check">
+    <label for="check">
+        <i class="fas fa-bars" id="sidebar_open"></i>
+        <i class="fas fa-times" id="sidebar_close"></i>
+    </label>
+    <div class="sidebar">
+        <div class="sidebar_title">
+            <img src="static/card.png" alt="">
+            <h1>Name</h1>
+        </div>
+        <ul>
+            <li><a href="">My Profile</a></li>
+            <li><a href="">Settings</a></li>
+            <li><a href="">Points</a></li>
+            <li><a href="">FAQ</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Share</a></li>
+            <li><a href="">Support</a></li>
+        </ul> 
+        <div class="logout">
+            <i class="fas fa-3x fa-sign-out-alt"></i>
+            <h1>Logout</h1>
+        </div>
+    </div>
+    <div id="bottom_bar">
+        <a href="">
+            <i class="fas fa-2x fa-user"></i>
+        </a>
+        <a href="">
+            <i class="fas fa-2x fa-th-large"></i>
+        </a>
+        <a href="">
+            <i class="fas fa-2x fa-home"></i>
+        </a>
+        <a href="">
+            <i class="fas fa-2x fa-map"></i>
+        </a>
+        <a href="">
+            <i class="fas fa-2x fa-bars"></i>
+        </a>
+    </div>
+    {{ content | safe }}
+</body>
+<script src="static/app.bundled.js"></script>
+
+</html>

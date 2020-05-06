@@ -1,0 +1,21 @@
+---
+layout: base.njk
+title: Get Started
+---
+
+
+{% set header = { title: 'Enter the confirmation code' } %}
+{% include "header.njk" %}
+<div class="otp-container header-child-container">
+    <h3>Enter the 4-digit confirmation code</h3>
+    <div class="field">
+        <div class="control">
+            <input class="input is-dark" type="text" placeholder="OTP" />
+        </div>
+    </div>
+    <a href="card-holder/personal-info">
+        <button class="button orange-button is-danger is-medium is-rounded">
+            Done
+        </button>
+    </a>
+</div>

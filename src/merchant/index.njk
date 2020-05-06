@@ -1,0 +1,64 @@
+---
+layout: base.njk
+title: Get Started
+---
+
+
+{% set header = { title: 'Create as a merchant' } %}
+{% include "header.njk" %}
+<div class="merchant-container container">
+    <div class="center">
+        <img src="static/merchant-shop.png" alt="">
+        <h1>Welcome to bring more customers to you</h1>
+    </div>
+    <div class="field is-horizontal">
+        <div class="field-body">
+            <div class="field">
+                <div class="control">
+                    <div class="select is-dark ">
+                        <select>
+                            <option>Choose a State</option>
+                            <option>With options</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="field">
+        <p class="control">
+            <input class="input  is-dark" type="text" placeholder="Password">
+        </p>
+    </div>
+    <div class="field">
+        <p class="control">
+            <input class="input  is-dark" type="text" placeholder="Confirm Password">
+        </p>
+    </div>
+    <div class="field has-addons has-addons-right columns is-gapless">
+        <p class="control column countrycode">
+            <span class="select is-dark">
+              <select>
+                <option>+968</option>
+                <option>+969</option>
+                <option>+970</option>
+              </select>
+            </span>
+          </p>
+        <div class="control column">
+            <input class="input is-dark" type="tel" placeholder="23 123456" />
+        </div>
+    </div>
+    <div class="field">
+        <div class="control">
+          <textarea class="textarea is-dark" placeholder="Your inquiries(Write all your inquiries)"></textarea>
+        </div>
+      </div>
+      <div class="center">
+          <a href="#">
+              <button class="button orange-button is-danger is-medium is-rounded">
+                  send
+              </button>
+          </a>
+      </div>
+</div>

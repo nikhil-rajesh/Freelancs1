@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Set the base URL for all relative URLs within the document -->
-<base href="{{ page.url }}">
+<base href="{{ site.url }}">
 
 <!-- 
   Short description of the document (limit to 150 characters)
@@ -39,31 +39,6 @@
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
 <title>{% if title %}{{ title }} - {% endif %}{{ site.title }}</title>
-
-<!-- Links to information about the author(s) of the document -->
-<link rel="author" href="humans.txt">
-
-<!-- Apple Touch Icon (reuse 192px icon.png) & standard favicons -->
-<link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
-
-<!-- Facebook Open Graph meta -->
-<meta property="og:url" content="{{ site.url}}{{ page.url }}">
-<meta property="og:type" content="website">
-<meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
-{% if site.meta_data.default_social_image or featured_image %}
-  <meta property="og:image" content="{% if env == 'production' %}{{ site.url }}{% endif %}{% if featured_image  %}{{ featured_image }}{% else %}{{ site.meta_data.default_social_image }}{% endif %}" />
-{% endif %}
-<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
-<meta property="og:site_name" content="{{ site.title }}">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="{{ site.author }}">
-
-<!-- Twitter Open Graph meta -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="{{ site.meta_data.twitter }}">
-<meta name="twitter:creator" content="{{ site.meta_data.twitter }}">
 
 <!-- disallow Twitter from using your site's info for personalization purposes -->
 <meta name="twitter:dnt" content="on">

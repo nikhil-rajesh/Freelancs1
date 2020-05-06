@@ -1,0 +1,67 @@
+---
+layout: base.njk
+title: SignIn
+permalink: /signin.html
+---
+
+<div class="main-container signin-container">
+	<div class="signin-card card">
+		<div class="card-content">
+			<h1 class="signin-title">SignIn</h1>
+			<div class="field">
+				<div class="control">
+					<input class="input is-info" type="text" placeholder="Email" />
+				</div>
+			</div>
+			<div class="field">
+				<div class="control">
+					<input class="input is-info" type="text" placeholder="Password" />
+				</div>
+			</div>
+			<div class="field">
+				<div class="control">
+					<label class="checkbox">
+						<input type="checkbox" />
+						Remember <a class="forgot-password" href="#">Forgot Password?</a>
+					</label>
+				</div>
+			</div>
+			<a class="signin-button" href="profile">
+				<button class="button orange-button is-medium is-rounded">
+					Sign In
+				</button>
+      </a>
+      <h1 class="no-account">Don't Have Account</h1>
+      <div class="options">
+        <div class="option">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="static/card-holder.png" alt="Placeholder image">
+              </figure>
+            </div>
+          </div>
+          <a class="option-button" href="card-holder/card-number/index.html">
+            <button class="button is-danger orange-button is-small is-rounded">
+              Create a card holder
+            </button>
+          </a>
+        </div>
+        <div class="option">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="static/merchant-shop.png" alt="Placeholder image">
+              </figure>
+            </div>
+          </div>
+          <a class="option-button" href="merchant">
+            <button class="button orange-button is-small is-danger is-rounded">
+              Create as a merchant
+            </button>
+          </a>
+        </div>
+      </div>
+		</div>
+	</div>
+</div>

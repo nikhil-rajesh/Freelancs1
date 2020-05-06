@@ -11,16 +11,16 @@ module.exports = function (eleventyConfig) {
     if (process.env.ELEVENTY_ENV === 'production') {
         // Minify HTML (including inlined CSS and JS) 
         eleventyConfig.addTransform("compressHTML", function (content, outputPath) {
-            if (outputPath.endsWith(".html")) {
-                let minified = htmlmin.minify(content, {
-                    useShortDoctype: true,
-                    removeComments: true,
-                    collapseWhitespace: true,
-                    minifyCSS: true,
-                    minifyJS: true
-                });
-                return minified;
-            }
+            // if (outputPath.endsWith(".html")) {
+            //     let minified = htmlmin.minify(content, {
+            //         useShortDoctype: true,
+            //         removeComments: true,
+            //         collapseWhitespace: true,
+            //         minifyCSS: true,
+            //         minifyJS: true
+            //     });
+            //     return minified;
+            // }
             return content;
         });
     }
