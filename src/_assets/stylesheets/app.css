@@ -68,7 +68,7 @@ label #sidebar_close {
 #check:checked ~ label #sidebar_close {
 	left: 245px;
 }
-.sidebar_title{
+.sidebar_title {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -118,7 +118,7 @@ label #sidebar_close {
 }
 #bottom_bar {
 	position: fixed;
-	z-index: 15;
+	z-index: 14;
 	height: 80px;
 	width: 100%;
 	bottom: 0;
@@ -290,7 +290,8 @@ header:before {
 	font-weight: 600;
 }
 .info-container,
-.merchant-container, .profile-container {
+.merchant-container,
+.profile-container {
 	max-width: 600px;
 	padding: 20px 15px;
 }
@@ -320,11 +321,11 @@ select {
 .countrycode {
 	max-width: 91px !important;
 }
-.profile-container .select, .profile-container
-select {
+.profile-container .select,
+.profile-container select {
 	width: 100%;
 }
-.profile-container .profile_title{
+.profile-container .profile_title {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -349,4 +350,34 @@ select {
 .profile-container .edit {
 	text-align: right;
 	width: 100%;
+}
+
+.settings_container {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	margin-top: 20px;
+	padding: 0 10px;
+	max-width: 400px;
+}
+.settings_container a {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-decoration: none;
+	font-size: 25px;
+	padding-bottom: 5px;
+	width: 100%;
+	border-bottom: 1px dotted grey;
+	margin: 10px 0;
+	color: black;
+}
+.settings_container .language {
+	display: flex;
+	align-items: center;
+}
+.settings_container .language p {
+	font-size: 20px;
+	color: grey;
+	margin-right: 10px;
 }
