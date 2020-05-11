@@ -1,0 +1,88 @@
+---
+layout: base_sidebar.njk
+title: Get Started
+---
+{% set header = { title: 'Welcome Mohammed' } %}
+{% include "header.njk" %}
+
+<div class="user_welcome_container container">
+    <div class="section_1">
+        <div class="photo_points">
+            <img class="user_pic" src="static/card-holder.png" alt="">
+            <div class="points">
+                <img src="static/points.png" alt="">
+                <p>190</p>
+            </div>
+        </div>
+        <p class="msg">You are a Premium Card holder.</p>
+    </div>
+    <div class="section_2">
+        <ul class="steps is-narrow is-medium is-horizontal is-centered">
+            <li class="steps-segment ">
+                <span class="steps-marker">
+                    <span class="icon">
+                        <i class="fa fa-shopping-bag"></i>
+
+                        <p>100</p>
+                    </span>
+                </span>
+            </li>
+            <li class="steps-segment ">
+                <span class="steps-marker">
+                    <span class="icon">
+                        <i class="fa fa-shopping-bag"></i>
+                        <p>100</p>
+                    </span>
+                </span>
+            </li>
+            <li class="steps-segment is-active ">
+                <span class="steps-marker">
+                    <span class="icon">
+                        <i class="fa fa-shopping-bag"></i>
+                        <p>100</p>
+                    </span>
+                </span>
+            </li>
+            <li class="steps-segment ">
+                <span class="steps-marker">
+                    <span class="icon">
+                        <i class="fa fa-shopping-bag"></i>
+                        <p>100</p>
+                    </span>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div class="section_3">
+        <h1>Our suggestions</h1>
+        <div class="suggestions">
+            <a class="suggestion"><img src="static/card-holder.png" alt=""></a>
+            <a class="suggestion"><img src="static/card-holder.png" alt=""></a>
+            <a class="suggestion"><img src="static/card-holder.png" alt=""></a>
+            <a class="suggestion"><img src="static/card-holder.png" alt=""></a>
+            <a class="suggestion"><img src="static/card-holder.png" alt=""></a>
+        </div>
+    </div>
+    <div class="section_4">
+        <img src="static/blank_card.png" alt="">
+        <p class="card-number">1234 1234 1234</p>
+    </div>
+    <div class="section_5 columns is-mobile">
+        <div class="expiry_date column is-one-third">
+            <i class="fa fa-calendar"></i>
+            Expiry:
+            <p>10 Mar 20</p>
+        </div>
+        <div class="column is-4">
+            <a class="qr_code">
+                <img src="static/qr-code.png" alt="">
+            </a>
+        </div>
+        <div class="column">
+            <a href="purchase-history" class="history">
+                <i class="fa fa-th-list"></i>
+                <p>History</p>
+            </a>
+        </div>
+    </div>
+</div>

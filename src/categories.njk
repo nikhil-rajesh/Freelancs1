@@ -1,0 +1,90 @@
+---
+layout: base_sidebar.njk
+title: Get Started
+---
+{% set header = { title: 'Categories' } %}
+{% include "header.njk" %}
+
+<div class="categories_container bottom_bar_margin">
+    <div class="search">
+        <div class="field has-addons">
+            <p class="control has-icons-left">
+                <input class="input is-rounded" type="text" placeholder="Search">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-search"></i>
+                </span>
+            </p>
+            <div class="control">
+                <a class="button is-rounded filter-button">
+                    <i class="fas fa-filter"></i>
+                </a>
+            </div>
+        </div>
+        <div class="card filter hidden" filter-state="hidden">
+            <div class="card-content">
+                <div class="select is-rounded">
+                    <select>
+                        <option>Rounded dropdown</option>
+                        <option>With options</option>
+                    </select>
+                </div>
+                <div class="select is-rounded">
+                    <select>
+                        <option>Rounded dropdown</option>
+                        <option>With options</option>
+                    </select>
+                </div>
+                <div class="select is-rounded">
+                    <select>
+                        <option>Rounded dropdown</option>
+                        <option>With options</option>
+                    </select>
+                </div>
+                <button class="button is-info is-rounded">Search</button>
+            </div>
+        </div>
+    </div>
+    <div class="columns is-mobile is-multiline">
+        <div class="column is-half">
+            <div class="card"><img src="static/merchant-shop.png" alt="">
+                <h1 class="service-title">Service</h1>
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="card"><img src="static/merchant-shop.png" alt="">
+                <h1 class="service-title">Service</h1>
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="card"><img src="static/merchant-shop.png" alt="">
+                <h1 class="service-title">Service</h1>
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="card"><img src="static/merchant-shop.png" alt="">
+                <h1 class="service-title">Service</h1>
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="card"><img src="static/merchant-shop.png" alt="">
+                <h1 class="service-title">Service</h1>
+            </div>
+        </div>
+        <div class="column is-half">
+            <div class="card"><img src="static/merchant-shop.png" alt="">
+                <h1 class="service-title">Service</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let filter_container = document.querySelector('.categories_container');
+    let filterbutton = filter_container.querySelector('.filter-button');
+    let filter = filter_container.querySelector('.filter');
+    filterbutton.addEventListener('click', (e) => {
+        let currentState = filter.getAttribute('filter-state');
+        let newState = currentState == 'hidden' ? 'visible' : 'hidden';
+        filter.setAttribute('filter-state', newState);
+        filter.classList.replace(currentState, newState);
+    })
+</script>
