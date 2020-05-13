@@ -6,8 +6,8 @@
 
 title: "Web Starter" # Appears after the title Page eg. Title - Web Starter
 description: "Minimal boilerplate for new projects built with Eleventy, Tailwind, PurgeCSS and PostCSS" 
-url: "https://isdoman.net/FORTEST/"
-# url: "http://localhost:8080"
+# url: "https://isdoman.net/FORTEST/"
+url: "http://localhost:8080"
 
 author: "Chris Collins"
 meta_data: 
