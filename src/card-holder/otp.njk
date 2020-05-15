@@ -5,18 +5,17 @@ permalink: card-holder/otp.html
 ---
 
 
-{% set header = { title: 'Enter the confirmation code' } %}
+{% set header = { titleEn: 'Enter the confirmation code', titleAr: 'أدخل رمز التأكيد' } %}
 {% include "header.njk" %}
 <div class="otp-container header-child-container">
-    <h3>Enter the 4-digit confirmation code</h3>
+    <h3 class="lan" en="Enter the 4-digit confirmation code" ar="أدخل رمز التأكيد المكون من 4 أرقام"></h3>
     <div class="field">
         <div class="control">
             <input class="input is-dark" type="text" placeholder="OTP" />
         </div>
     </div>
     <a href="card-holder/personal-info.html">
-        <button class="button orange-button is-danger is-medium is-rounded">
-            Done
+        <button class="button orange-button is-danger is-medium is-rounded lan" en="Done" ar="منجز">
         </button>
     </a>
 </div>

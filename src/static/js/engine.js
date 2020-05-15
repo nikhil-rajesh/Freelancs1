@@ -215,6 +215,23 @@ $(function () {
 		$("#edit-profile").css("display", "none");
 	});
 
+	$(document).on("click", "#chooseLanguage", function(e) {
+		e.preventDefault();
+		$("#chooseLanguageModal").addClass("is-active");
+	});
+
+	$(document).on("click", ".modal-close", function(e) {
+		$("#chooseLanguageModal").removeClass("is-active");
+	});
+
+	$(document).on("click", ".cl", function (e) {
+		e.preventDefault();
+		var atr = $(this).attr("r");
+		localStorage.setItem("lang", atr);
+		translate(atr);
+		$("#chooseLanguageModal").removeClass("is-active");
+	});
+	
 	pg = pg();
 	switch (pg) {
 		case "signin.html":
@@ -240,8 +257,7 @@ $(function () {
 			ajx(tmp, "getprofile.php", 1);
 			break;
 	}
-
-	if (pg == "faq.html" || pg == "about.html" || pg == "_u_str_profile.html") {
-		translate(localStorage.getItem("lang"));
-	}
+	if (localStorage.getItem("lang") == null)
+		localStorage.setItem("lang", "en");
+	translate(localStorage.getItem("lang"));
 });

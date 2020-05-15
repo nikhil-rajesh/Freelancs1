@@ -5,12 +5,12 @@ permalink: merchant.html
 ---
 
 
-{% set header = { title: 'Create as a merchant' } %}
+{% set header = { titleEn: 'Create as a merchant', titleAr: 'إنشاء كتاجر' } %}
 {% include "header.njk" %}
 <div class="merchant-container container">
     <div class="center">
         <img src="static/merchant-shop.png" alt="">
-        <h1>Welcome to bring more customers to you</h1>
+        <h1 class="lan" en="Welcome to bring more customers to you" ar="مرحبا لجلب المزيد من العملاء لك"></h1>
     </div>
     <div class="field is-horizontal">
         <div class="field-body">
@@ -52,13 +52,12 @@ permalink: merchant.html
     </div>
     <div class="field">
         <div class="control">
-          <textarea class="textarea is-dark" placeholder="Your inquiries(Write all your inquiries)"></textarea>
+          <textarea class="textarea is-dark" placeholder="Your inquiries-Write all your inquiries"></textarea>
         </div>
       </div>
       <div class="center">
           <a href="signin.html">
-              <button class="button orange-button is-danger is-medium is-rounded">
-                  send
+              <button class="button orange-button is-danger is-medium is-rounded lan" en="Send" ar="إرسال">
               </button>
           </a>
       </div>

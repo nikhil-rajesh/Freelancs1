@@ -3,7 +3,7 @@ layout: base_sidebar.njk
 title: Get Started
 permalink: user_welcome.html
 ---
-{% set header = { title: 'Welcome Mohammed' } %}
+{% set header = { titleEn: 'Welcome Mohammed', titleAr: 'أهلا بك Mohammed' } %}
 {% include "header.njk" %}
 
 <div class="user_welcome_container container">
@@ -15,7 +15,7 @@ permalink: user_welcome.html
                 <p>190</p>
             </div>
         </div>
-        <p class="msg">You are a Premium Card holder.</p>
+        <p class="msg lan" en="You are a Premium Card holder." ar="أنت حامل بطاقة بريميوم."></p>
     </div>
     <div class="section_2">
         <ul class="steps is-narrow is-medium is-horizontal is-centered">
@@ -55,7 +55,7 @@ permalink: user_welcome.html
         </ul>
     </div>
     <div class="section_3">
-        <h1>Our suggestions</h1>
+        <h1 class="lan" en="Our suggestions" ar="اقتراحاتنا"></h1>
         <div class="suggestions">
             <a class="suggestion"><img src="static/img/card-holder.png" alt=""></a>
             <a class="suggestion"><img src="static/img/card-holder.png" alt=""></a>
@@ -71,7 +71,7 @@ permalink: user_welcome.html
     <div class="section_5 columns is-mobile">
         <div class="expiry_date column is-one-third">
             <i class="fa fa-calendar"></i>
-            Expiry:
+            <p class="lan" en="Expiry:" ar="انقضاء:"></p>
             <p>10 Mar 20</p>
         </div>
         <div class="column is-4">
@@ -82,7 +82,7 @@ permalink: user_welcome.html
         <div class="column">
             <a href="purchase-history.html" class="history">
                 <i class="fa fa-th-list"></i>
-                <p>History</p>
+                <p class="lan" en="History" ar="التاريخ"></p>
             </a>
         </div>
     </div>

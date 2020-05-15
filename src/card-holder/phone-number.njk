@@ -5,7 +5,7 @@ permalink: card-holder/phone-number.html
 ---
 
 
-{% set header = { title: 'Confirm the phone number' } %}
+{% set header = { titleEn: 'Confirm the phone number', titleAr: 'قم بتأكيد رقم الهاتف' } %}
 {% include "header.njk" %}
 <div class="header-child-container phone-number-container">
     <div class="field has-addons has-addons-right">
@@ -22,10 +22,9 @@ permalink: card-holder/phone-number.html
             <input class="input is-dark" type="tel" placeholder="23 123456" />
         </div>
     </div>
-    <p>For SMS verification, standard rates may apply</p>
+    <p class="lan" en="For SMS verification, standard rates may apply" ar="للتحقق من الرسائل القصيرة ، قد يتم تطبيق الأسعار القياسية"></p>
     <a href="card-holder/otp.html">
-        <button class="button orange-button is-danger is-medium is-rounded">
-            Done
+        <button class="button orange-button is-danger is-medium is-rounded lan" en="Done" ar="منجز">
         </button>
     </a>
 </div>

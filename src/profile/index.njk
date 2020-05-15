@@ -3,20 +3,20 @@ layout: base_sidebar.njk
 title: Get Started
 permalink: profile.html
 ---
-{% set header = { title: 'My Profile' } %}
+{% set header = { titleEn: 'My Profile', titleAr: 'ملفي' } %}
 {% include "header.njk" %}
 
 <div class="profile-container container bottom_bar_margin">
     <div class="profile_title">
         <img src="static/img/logo.png" class="profile_pic" alt="">
-        <h1>You are a silver member</h1>
+        <h1 class="lan" en="You are a silver member" ar="أنت عضو فضي"></h1>
         <img src="static/img/card.png" class="credit_card" alt="">
     </div>
     <div class="edit">
         <div id="edit-profile">
             <i class="fas fa-edit"></i>
         </div>
-        <button id="update-profile" class="button is-small is-info is-rounded">Update</button>
+        <button id="update-profile" class="button is-small is-info is-rounded lan" en="Update" ar="تحديث"></button>
     </div>
     <form id="updfrm">
         <div class="field is-horizontal">

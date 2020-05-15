@@ -97,7 +97,7 @@ label #sidebar_close {
 }
 .sidebar li {
 	width: 100%;
-	padding-left: 2.5em;
+	padding:0 2.5em;
 	line-height: 3em;
 	font-size: 20px;
 	font-weight: 600;
@@ -411,6 +411,21 @@ select {
 	font-size: 20px;
 	color: grey;
 	margin-right: 10px;
+}
+#chooseLanguageModal {
+	.modal-content {
+		width: 30%;
+		height: 10%;
+
+		.card {
+			width: 100%;
+			height: 100%;
+			border-radius: 15px;
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+		}
+	}
 }
 
 .home_container {

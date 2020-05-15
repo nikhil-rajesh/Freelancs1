@@ -3,31 +3,46 @@ layout: base_sidebar.njk
 title: Get Started
 permalink: settings.html
 ---
-{% set header = { title: 'Settings' } %}
-{% include "header.njk" %}
+
+{% set header = { titleEn: 'Settings', titleAr: 'الإعدادات' } %} {% include
+"header.njk" %}
 
 <div class="settings_container container bottom_bar_margin">
-    <a href="">
-        <div>Change Password</div>
-        <i class="fas fa-arrow-right"></i>
-    </a>
-    <a href="">
-        <div>Notifications</div>
-        <i class="fas fa-arrow-right"></i>
-    </a>
-    <a href="">
-        <div>Language</div>
-        <div class="language">
-            <p>English</p>
-            <i class="fas fa-arrow-right"></i>
+	<a href="">
+		<div class="lan" en="Change Password" ar="تغيير كلمة المرور"></div>
+		<i class="fas fa-arrow-right"></i>
+	</a>
+	<a href="">
+		<div class="lan" en="Notifications" ar="إشعارات"></div>
+		<i class="fas fa-arrow-right"></i>
+	</a>
+	<a href="" id="chooseLanguage">
+		<div class="lan" en="Language" ar="لغة"></div>
+		<div class="language">
+			<p class="lan" en="English" ar="عربى"></p>
+			<i class="fas fa-arrow-right"></i>
+		</div>
+	</a>
+	<a href="">
+		<div class="lan" en="ADs" ar="إعلانات"></div>
+		<i class="fas fa-arrow-right"></i>
+	</a>
+	<a href="">
+		<div class="lan" en="Terms and Conditions" ar="الأحكام والشروط"></div>
+		<i class="fas fa-arrow-right"></i>
+	</a>
+</div>
+<div class="modal" id="chooseLanguageModal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="card">
+            <a href="" class="cl" r="en">
+                <button class="button is-info">English</button>
+            </a>
+            <a href="" class="cl" r="ar">
+                <button class="button is-info">Arabic</button>
+            </a>
         </div>
-    </a>
-    <a href="">
-        <div>ADs</div>
-        <i class="fas fa-arrow-right"></i>
-    </a>
-    <a href="">
-        <div>Terms and Conditions</div>
-        <i class="fas fa-arrow-right"></i>
-    </a>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
 </div>
