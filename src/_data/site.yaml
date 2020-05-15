@@ -4,13 +4,11 @@
 
 #  This file can be accessed using: {{ site.title }}
 
-title: "Web Starter" # Appears after the title Page eg. Title - Web Starter
-description: "Minimal boilerplate for new projects built with Eleventy, Tailwind, PurgeCSS and PostCSS" 
-# url: "https://isdoman.net/FORTEST/"
-url: "http://localhost:8080"
+title: "Isdoman" # Appears after the title Page eg. Title - Web Starter
+description: "My description" 
+url: "https://isdoman.net/FORTEST/"
+# url: "http://localhost:8080"
 
-author: "Chris Collins"
+author: "Nikhil R"
 meta_data: 
- twitter: "@scottishstoater"
- default_social_image: "/static/default_social_image.jpg"
-
+ website: "nikhilr.me"

@@ -5,7 +5,7 @@ $steps-horizontal-min-width: 4em;
 @import "../../../node_modules/bulma-calendar/dist/css/bulma-calendar.min";
 @import "../../../node_modules/bulma/bulma.sass";
 html {
-	background-color: #f9f9f9;
+	background-color: #fff;
 }
 body {
 	padding: 0;
@@ -112,6 +112,7 @@ label #sidebar_close {
 	line-height: 5em;
 	display: flex;
 	align-items: center;
+	cursor: pointer;
 }
 .sidebar .logout i {
 	color: white;
@@ -300,7 +301,61 @@ header:before {
 .profile-container {
 	max-width: 600px;
 	padding: 20px 15px;
+
+	.select, select {
+		width: 100%;
+	}
+	.profile_title {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		width: 100%;
+		margin: 20px 0;
+		h1 {
+			font-size: 20px;
+			font-weight: 600;
+			color: grey;
+			overflow: hidden;
+		}
+		.profile_pic {
+			border-radius: 50px;
+			height: 50px;
+			width: 50px;
+		}
+		.credit_card {
+			height: 30px;
+			width: 50px;
+		}
+	}
+	.edit {
+		text-align: right;
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+	}
+	#edit-profile {
+		cursor: pointer;
+	}
+	#update-profile {
+		display: none;
+		margin: 5px 0 ;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .info-container .select,
 select {
 	width: 100%;
@@ -326,36 +381,6 @@ select {
 }
 .countrycode {
 	max-width: 91px !important;
-}
-.profile-container .select,
-.profile-container select {
-	width: 100%;
-}
-.profile-container .profile_title {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	width: 100%;
-	margin: 20px 0;
-}
-.profile-container .profile_title h1 {
-	font-size: 20px;
-	font-weight: 600;
-	color: grey;
-	overflow: hidden;
-}
-.profile-container .profile_title .profile_pic {
-	border-radius: 50px;
-	height: 50px;
-	width: 50px;
-}
-.profile-container .profile_title .credit_card {
-	height: 30px;
-	width: 50px;
-}
-.profile-container .edit {
-	text-align: right;
-	width: 100%;
 }
 
 .settings_container {

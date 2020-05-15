@@ -13,101 +13,103 @@ permalink: profile.html
         <img src="static/img/card.png" class="credit_card" alt="">
     </div>
     <div class="edit">
-        <i class="fas fa-edit"></i>
+        <div id="edit-profile">
+            <i class="fas fa-edit"></i>
+        </div>
+        <button id="update-profile" class="button is-small is-info is-rounded">Update</button>
     </div>
-    <div class="field is-horizontal">
-        <div class="field-body">
-            <div class="field">
-                <p class="control is-expanded has-icons-left">
-                    <input class="input" type="text" placeholder="Name">
-                    <span class="icon is-small is-left">
-                        <i class="fas fa-user"></i>
-                    </span>
-                </p>
-            </div>
-            <div class="field">
-                <p class="control">
-                    <input class="input" type="text" placeholder="Last Name">
-                </p>
+    <form id="updfrm">
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field form-group">
+                    <p class="control is-expanded has-icons-left">
+                        <input class="input form-control" name="name" type="text" placeholder="Name">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input class="input form-control" type="text" placeholder="Last Name">
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="field">
-        <p class="control is-expanded has-icons-left">
-            <input class="input" type="email" placeholder="Email" value="alex@smith.com">
-            <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-            </span>
-        </p>
-    </div>
-    <div class="field has-addons has-addons-right columns is-gapless">
-        <p class="control column countrycode">
-            <span class="select">
-              <select>
-                <option>+968</option>
-                <option>+969</option>
-                <option>+970</option>
-              </select>
-            </span>
-          </p>
-        <div class="control column">
-            <input class="input" type="tel" placeholder="23 123456" />
+        <div class="field form-group">
+            <p class="control is-expanded has-icons-left">
+                <input class="input form-control" name="email" type="email" placeholder="Email" value="alex@smith.com">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                </span>
+            </p>
         </div>
-    </div>
+        <div class="field form-group has-addons has-addons-right columns is-gapless">
+            <p class="control column countrycode">
+                <span class="select">
+                    <select class="form-control">
+                        <option>+968</option>
+                        <option>+969</option>
+                        <option>+970</option>
+                    </select>
+                </span>
+            </p>
+            <div class="control column">
+                <input class="input form-control" name="mob" type="tel" placeholder="23 123456" />
+            </div>
+        </div>
 
-    <div class="field is-horizontal">
-        <div class="field-body">
-            <div class="field">
-                <p class="control" id="date-picker-control">
-                    <input class="input" id="date-picker" value="05/14/2020" type="date" placeholder="Confirm Password">
-                </p>
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field">
+                    <p class="control" id="date-picker-control">
+                        <input class="input form-control" id="date-picker" value="05-14-2020" type="date"
+                            placeholder="Enter Date of birth">
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="field is-horizontal">
-        <div class="field-body">
-            <div class="field">
-                <div class="control">
-                    <div class="select is-fullwidth">
-                        <select>
-                            <option>Business development</option>
-                            <option>Marketing</option>
-                            <option>Sales</option>
-                        </select>
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field form-group">
+                    <div class="control">
+                        <div class="select is-fullwidth">
+                            <select class="form-control" name="country">
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="field is-horizontal">
-        <div class="field-body">
-            <div class="field">
-                <div class="control">
-                    <div class="select is-fullwidth">
-                        <select>
-                            <option>Business development</option>
-                            <option>Marketing</option>
-                            <option>Sales</option>
-                        </select>
+
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field form-group">
+                    <div class="control">
+                        <div class="select is-fullwidth">
+                            <select class="form-control" name="state">
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="field is-horizontal">
-        <div class="field-body">
-            <div class="field">
-                <div class="control">
-                    <div class="select is-fullwidth">
-                        <select>
-                            <option>Business development</option>
-                            <option>Marketing</option>
-                            <option>Sales</option>
-                        </select>
+
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field form-group">
+                    <div class="control">
+                        <div class="select is-fullwidth">
+                            <select class="form-control" name="city">
+                                <option>Business development</option>
+                                <option>Marketing</option>
+                                <option>Sales</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
