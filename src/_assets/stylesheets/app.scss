@@ -10,6 +10,7 @@ html {
 body {
 	padding: 0;
 	margin: 0;
+	overflow: hidden;
 }
 .main-container {
 	min-height: 100vh;
@@ -414,7 +415,7 @@ select {
 }
 #chooseLanguageModal {
 	.modal-content {
-		width: 30%;
+		min-width: 30%;
 		height: 10%;
 
 		.card {
