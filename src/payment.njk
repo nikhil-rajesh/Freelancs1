@@ -1,0 +1,66 @@
+---
+layout: base.njk
+title: Get Started
+permalink: payment.html
+---
+{% set header = { titleEn: 'Pay Now', titleAr: 'ادفع الآن' } %}
+{% include "header.njk" %}
+
+<a href="user_welcome.html" class="back_button">
+    <i class="fas fa-arrow-left"></i>
+</a>
+<div class="payment_container">
+    <div class="card history-card">
+        <div class="card title-card">
+            <a href="#pablo">
+                <img src="static/img/shop.jpg" alt="">
+            </a>
+        </div>
+        <div class="card-content">
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Amount</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                            <input class="input" placeholder="Enter the Amount" type="number">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-mobile">
+                <div class="column">
+                    <div class="field offer-field">
+                        <div class="field-label is-normal">
+                            <label class="label">Offer</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control">
+                                    <input class="input is-static" type="number" value="0" readonly>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <button class="button is-rounded is-success">
+                        <i class="fas fa-qrcode" style="margin: 3px;"></i>
+                        <p>QR CODE</p>
+                    </button>
+                </div>
+            </div>
+            <div class="total-field">
+                <h4 class="lan" ar="المبلغ الإجمالي" en="Total Amount"></h4>
+                <h3 id="tp">0</h3>
+            </div>
+            <div class="done-button">
+                <a href="home.html">
+                    <button class="button orange-button is-danger is-rounded lan" en="Done" ar="منجز">
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

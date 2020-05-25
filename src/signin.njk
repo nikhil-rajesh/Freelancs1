@@ -3,7 +3,24 @@ layout: base.njk
 title: SignIn
 permalink: signin.html
 ---
-
+<div class="modal" id="forgotPasswordModal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="card">
+      <h1 class="lan" ar="كلمة سر منسية" en="Forgotten Password"></h1>
+      <form id="forgt">
+        <div class="field form-group">
+          <div class="control">
+            <label class="label lan" en="Registered Mobile Number / Email" ar="رقم الجوال المسجل / البريد الإلكتروني"></label>
+            <input type="text" class="input is-info form-control" name="mob" required />
+          </div>
+        </div>
+        <button class="button is-rounded is-danger lan" type="submit" en="Submit" ar="خضع"></button>
+      </form>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
 <div class="main-container signin-container">
   <div class="signin-card card">
     <div class="card-content">
@@ -23,7 +40,7 @@ permalink: signin.html
           <div class="control">
             <label class="checkbox lan" en='<input type="checkbox" />Remember' ar='<input type="checkbox" />تذكر'>
             </label>
-            <a class="forgot-password lan" href="#" en="Forgot Password?" ar="هل نسيت كلمة المرور؟"></a>
+            <a class="forgot-password lan" id="forgtFormButton" href="#" en="Forgot Password?" ar="هل نسيت كلمة المرور؟"></a>
           </div>
         </div>
         <a class="signin-button" href="profile.html">

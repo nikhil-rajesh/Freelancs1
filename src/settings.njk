@@ -8,7 +8,7 @@ permalink: settings.html
 "header.njk" %}
 
 <div class="settings_container container bottom_bar_margin">
-	<a href="">
+	<a id="changePasswordButton">
 		<div class="lan" en="Change Password" ar="تغيير كلمة المرور"></div>
 		<i class="fas fa-arrow-right"></i>
 	</a>
@@ -42,6 +42,29 @@ permalink: settings.html
             <a href="" class="cl" r="ar">
                 <button class="button is-info">Arabic</button>
             </a>
+        </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+</div>
+<div class="modal" id="changePasswordModal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="card">
+			<form id="changePasswordForm">
+				<div class="field form-group">
+					<div class="control">
+					  <label class="label lan" en="New Password" ar="كلمة السر الجديدة"></label>
+					  <input type="password" class="input is-info form-control" name="pass" required />
+					</div>
+				  </div>
+				  <div class="field form-group">
+					<div class="control">
+					  <label class="label lan" en="Confirm Password" ar="تأكيد كلمة المرور"></label>
+					  <input type="password" class="input is-info form-control" name="conpass" required />
+					</div>
+				  </div>
+				  <button class="button is-danger is-rounded lan" type="submit" en="Submit" ar="إرسال"></button>
+			</form>
         </div>
     </div>
     <button class="modal-close is-large" aria-label="close"></button>

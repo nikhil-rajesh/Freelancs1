@@ -21,6 +21,41 @@ body {
 	flex-direction: column;
 }
 
+#shareModal,
+#supportModal {
+	.card {
+		border-radius: 10px;
+		min-height: 100px;
+		margin: auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+}
+
+#shareModal {
+	.card {
+		max-width: 300px;
+	}
+	svg {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+#supportModal .card {
+	max-width: 400px;
+	flex-direction: column;
+	padding: 2rem;
+	a {
+		color: black;
+	}
+	h1 {
+		font-size: 30px;
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+}
 .sidebar {
 	position: fixed;
 	left: -300px;
@@ -98,7 +133,7 @@ label #sidebar_close {
 }
 .sidebar li {
 	width: 100%;
-	padding:0 2.5em;
+	padding: 0 2.5em;
 	line-height: 3em;
 	font-size: 20px;
 	font-weight: 600;
@@ -173,6 +208,29 @@ label #sidebar_close {
 .skip-login a {
 	padding-left: 5px;
 	color: red;
+}
+#forgotPasswordModal {
+	.card {
+		padding: 1rem 0;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		border-radius: 10px;
+
+		#forgt {
+			padding: 1rem 0;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	h1 {
+		font-weight: 600;
+		font-size: 24px;
+	}
 }
 .signin-container .card {
 	width: 500px;
@@ -303,7 +361,8 @@ header:before {
 	max-width: 600px;
 	padding: 20px 15px;
 
-	.select, select {
+	.select,
+	select {
 		width: 100%;
 	}
 	.profile_title {
@@ -339,23 +398,9 @@ header:before {
 	}
 	#update-profile {
 		display: none;
-		margin: 5px 0 ;
+		margin: 5px 0;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .info-container .select,
 select {
@@ -367,18 +412,28 @@ select {
 	align-items: center;
 	flex-direction: column;
 }
-.merchant-container img {
-	width: 200px;
-}
-.merchant-container h1 {
-	text-align: center;
-	font-size: 20px;
-	font-weight: 600;
-	padding-bottom: 20px;
-}
-.merchant-container .select,
-select {
-	width: 100%;
+.merchant-container {
+	img {
+		width: 200px;
+	}
+	h1 {
+		text-align: center;
+		font-size: 20px;
+		font-weight: 600;
+		padding-bottom: 20px;
+	}
+	.select,
+	select {
+		width: 100%;
+	}
+	.modal .card {
+		border-radius: 10px;
+		padding: 2rem;
+		display: flex;
+		justify-content: center;
+		font-size: 20px;
+		font-weight: 600;
+	}
 }
 .countrycode {
 	max-width: 91px !important;
@@ -426,6 +481,17 @@ select {
 			align-items: center;
 			justify-content: space-evenly;
 		}
+	}
+}
+#changePasswordModal .card {
+	border-radius: 10px;
+
+	form {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: 2rem;
 	}
 }
 
@@ -624,10 +690,11 @@ select {
 	}
 }
 
-.purchase_container {
+.purchase_container,
+.payment_container {
 	display: flex;
 	justify-content: center;
-	margin-top: 50px;
+	margin: 50px 0;
 	align-items: center;
 
 	.card {
@@ -645,10 +712,7 @@ select {
 	}
 
 	.title-card {
-		background-color: #858bfe;
 		box-shadow: 0 0 8px 0.1px rgba(128, 128, 128, 0.555);
-		height: 70px;
-		width: 80%;
 		margin: auto;
 		top: -35px;
 		display: flex;
@@ -660,12 +724,86 @@ select {
 	}
 }
 
+.purchase_container .title-card {
+	background-color: #858bfe;
+	height: 70px;
+	width: 80%;
+}
+
+.payment_container {
+	.title-card {
+		width: 100px;
+		border-radius: 10rem;
+		overflow: hidden;
+		a {
+			max-height: 100px;
+		}
+	}
+	.offer-field {
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+	}
+	.total-field {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		h3 {
+			font-size: 20px;
+		}
+		h4 {
+			font-weight: 600;
+		}
+	}
+	.done-button {
+		display: flex;
+		justify-content: center;
+	}
+	.card-content {
+		min-height: 350px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+
+		.columns .column {
+			display: flex;
+			justify-content: center;
+		}
+	}
+}
+
 .back_button {
 	color: white;
 	font-size: 20px;
 	position: absolute;
 	top: 1em;
 	left: 1em;
+}
+
+#pleaseRegisterModal .card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border-radius: 10px;
+	padding: 1rem;
+
+	i {
+		color: #f8bb86;
+	}
+
+	h1 {
+		font-weight: 600;
+		font-size: 24px;
+		padding: 10px 0;
+	}
+
+	p {
+		font-size: 18px;
+		padding-bottom: 10px;
+	}
 }
 
 .categories_container {
@@ -764,25 +902,8 @@ select {
 
 			.points {
 				position: absolute;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				width: 75px;
-				height: 70px;
 				right: 0;
 				bottom: 0;
-				margin: 0 10px;
-
-				img {
-					position: absolute;
-					width: 75px;
-					height: 70px;
-				}
-
-				p {
-					color: #fc9133;
-					font-size: 600;
-				}
 			}
 		}
 
@@ -988,6 +1109,26 @@ select {
 	}
 }
 
+.points {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 75px;
+	height: 70px;
+	margin: 0 10px;
+
+	img {
+		position: absolute;
+		width: 75px;
+		height: 70px;
+	}
+
+	p {
+		color: #fc9133;
+		font-size: 600;
+	}
+}
+
 .about_container {
 	display: flex;
 	justify-content: center;
@@ -1010,6 +1151,135 @@ select {
 			font-size: 16px;
 			text-align: justify;
 			margin-bottom: 1rem;
+		}
+	}
+}
+
+.points_container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	max-width: 600px;
+	margin: 50px auto 100px auto;
+	padding: 0 20px;
+	align-items: center;
+
+	.user_points {
+		position: relative;
+		margin: 10px 0;
+		.addPoints {
+			position: absolute;
+			left: -15px;
+
+			img {
+				max-height: 30px;
+			}
+		}
+	}
+
+	p {
+		font-weight: 600;
+		font-size: 1.2rem;
+		text-align: center;
+	}
+
+	.progressBars {
+		margin: 40px 0 20px 0;
+		.progressBar {
+			min-width: 250px;
+			height: 20px;
+			margin: 10px 0;
+			background-color: #ccc;
+			border-radius: 10px;
+			overflow: hidden;
+
+			.value {
+				height: 100%;
+				background: rgb(254, 122, 44);
+				background: linear-gradient(
+					90deg,
+					rgba(254, 122, 44, 1) 0%,
+					rgba(247, 192, 64, 1) 100%
+				);
+			}
+		}
+
+		.description {
+			display: flex;
+			justify-content: space-between;
+
+			h2 {
+				font-weight: 600;
+			}
+		}
+	}
+	.redeemMsg {
+		font-size: 1.5rem;
+	}
+	.redeem {
+		width: 100%;
+		margin: 10px 0;
+		justify-content: center;
+
+		.column {
+			box-sizing: border-box;
+			overflow: hidden;
+			margin: 5px;
+			background-color: #ffc373;
+
+			h2 {
+				font-weight: 600;
+				font-size: 20px;
+			}
+
+			.pointCount {
+				width: 100%;
+				display: flex;
+				justify-content: flex-end;
+
+				div {
+					height: 30px;
+					width: 30px;
+					font-weight: 600;
+					border-radius: 15px;
+					background-color: white;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+	}
+}
+
+.top-left-rounded {
+	border-radius: 25px 0 0 0;
+}
+.top-right-rounded {
+	border-radius: 0 25px 0 0;
+}
+.bottom-right-rounded {
+	border-radius: 0 0 25px 0;
+}
+.bottom-left-rounded {
+	border-radius: 0 0 0 25px;
+}
+
+.buy_points_container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	max-width: 600px;
+	margin: 50px auto 100px auto;
+	align-items: center;
+
+	.columns .column {
+		display: flex;
+		justify-content: center;
+		img {
+			max-width: 80px;
 		}
 	}
 }

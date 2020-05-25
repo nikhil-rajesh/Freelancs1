@@ -30,7 +30,6 @@ $(function () {
 			processData: false,
 			type: "POST",
 			success: function (data) {
-				console.log(data);
 				var n = (m = b = "");
 				switch (pg) {
 					case "signin.html":
@@ -50,7 +49,7 @@ $(function () {
 								location.href = "home.html";
 							}
 						} else if (typ == 3) {
-							$(".modal").modal("hide");
+							$("#forgotPasswordModal").removeClass("is-active");
 							if (data == 0) {
 								tmp =
 									localStorage.getItem("lang") == "en"
@@ -67,9 +66,9 @@ $(function () {
 						}
 						break;
 
-					case "register.html":
+					case "merchant.html":
 						if (typ == 1) {
-							$(".county").html(data);
+							$(".country").html(data);
 							translate(localStorage.getItem("lang"));
 						} else {
 							if (data == 0) {
@@ -186,6 +185,47 @@ $(function () {
 						}
 						translate(localStorage.getItem("lang"));
 						break;
+
+					case "settings.html":
+						if (typ == 2) {
+							if (localStorage.getItem("lang") == "en") {
+								if (data == 0) {
+									m = "Invalid Email ID";
+									t = "error";
+								} else if (data == 2) {
+									m = "Invalid Mobile Number";
+									t = "error";
+								} else if (data == 3) {
+									m = "Process Failed";
+									t = "error";
+								} else if (data == 4) {
+									m = "EMail / Mobile number already taken";
+									t = "error";
+								} else {
+									m = "Profile Updated";
+									t = "success";
+								}
+							} else if (localStorage.getItem("lang") == "ar") {
+								if (data == 0) {
+									m = "معرف البريد الإلكتروني غير صالح";
+									t = "error";
+								} else if (data == 2) {
+									m = "رقم الجوال غير صالح";
+									t = "error";
+								} else if (data == 3) {
+									m = "فشل العملية";
+									t = "error";
+								} else if (data == 4) {
+									m = "البريد الإلكتروني / رقم الجوال المتخذ بالفعل";
+									t = "error";
+								} else {
+									m = "تحديث الملف الشخصي";
+									t = "success";
+								}
+							}
+							showNotification(m, t);
+						};
+						break;
 				}
 			},
 			error: function (data) {
@@ -215,13 +255,19 @@ $(function () {
 		$("#edit-profile").css("display", "none");
 	});
 
-	$(document).on("click", "#chooseLanguage", function(e) {
+	$(document).on("click", "#chooseLanguage", function (e) {
 		e.preventDefault();
 		$("#chooseLanguageModal").addClass("is-active");
 	});
 
-	$(document).on("click", ".modal-close", function(e) {
+	$(document).on("click", ".modal-close", function (e) {
 		$("#chooseLanguageModal").removeClass("is-active");
+		$("#merchantFormModal").removeClass("is-active");
+		$("#forgotPasswordModal").removeClass("is-active");
+		$("#pleaseRegisterModal").removeClass("is-active");
+		$("#shareModal").removeClass("is-active");
+		$("#supportModal").removeClass("is-active");
+		$("#changePasswordModal").removeClass("is-active");
 	});
 
 	$(document).on("click", ".cl", function (e) {
@@ -231,7 +277,76 @@ $(function () {
 		translate(atr);
 		$("#chooseLanguageModal").removeClass("is-active");
 	});
-	
+
+	$(document).on("click", "#merchantFormSubmitButton", function (e) {
+		e.preventDefault();
+		$("#merchantFormModal").addClass("is-active");
+	});
+
+	$(document).on("click", "#forgtFormButton", function (e) {
+		e.preventDefault();
+		$("#forgotPasswordModal").addClass("is-active");
+	});
+
+	$(document).on("click", ".closePleaseRegisterModal", function (e) {
+		e.preventDefault();
+		$("#pleaseRegisterModal").removeClass("is-active");
+	});
+
+	$(document).on("click", "#shareButton", function (e) {
+		e.preventDefault();
+		$("#shareModal").addClass("is-active");
+	});
+
+	$(document).on("click", "#supportButton", function (e) {
+		e.preventDefault();
+		$("#supportModal").addClass("is-active");
+	});
+
+	$(document).on("click", "#changePasswordButton", function (e) {
+		e.preventDefault();
+		$("#changePasswordModal").addClass("is-active");
+	});
+
+	$(document).on("submit", "#forgt", function (e) {
+		e.preventDefault();
+		ajx(new FormData(this), "forgotten.php", 3);
+	});
+
+	$(document).on("submit", "#changePasswordForm", function (e) {
+		e.preventDefault();
+		let fd = new FormData(this)
+		if (fd.get('pass') !== fd.get('conpass')) {
+			let msg = localStorage.getItem("lang") === "en" ? "Passwords do not match" : "كلمة المرور غير مطابقة";
+			showNotification(msg, "error");
+		} else {
+			fd.delete('conpass');
+			fd.append("id", localStorage.getItem("logu"));
+			let tmp = new FormData();
+			tmp.append("id", localStorage.getItem("logu"));
+			$.ajax({
+				url: "https://isdoman.net/api/getprofile.php",
+				data: tmp,
+				cache: false,
+				contentType: false,
+				processData: false,
+				type: "POST",
+				success: function (data) {
+					var d = JSON.parse(data);
+					fd.append("name", d.n);
+					fd.append("adds", d.a);
+					fd.append("country", d.co);
+					fd.append("state", d.s);
+					fd.append("city", d.c);
+					fd.append("pin", d.p);
+					fd.append("email", d.e);
+					fd.append("mob", d.m);
+					ajx(fd, "updprofile.php", 2);
+				}
+			});
+		}
+	});
+
 	pg = pg();
 	switch (pg) {
 		case "signin.html":
@@ -255,6 +370,16 @@ $(function () {
 			tmp = new FormData();
 			tmp.append("id", localStorage.getItem("logu"));
 			ajx(tmp, "getprofile.php", 1);
+			break;
+
+		case "merchant.html":
+			ajx("", "getcountries.php", 1);
+			break;
+
+		case "categories.html":
+			if (localStorage.getItem("logsts") == 0) {
+				$("#pleaseRegisterModal").addClass("is-active");
+			}
 			break;
 	}
 	if (localStorage.getItem("lang") == null)
