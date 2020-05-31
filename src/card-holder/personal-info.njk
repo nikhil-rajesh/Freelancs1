@@ -1,9 +1,9 @@
 ---
 layout: base.njk
 title: Get Started
+personalinfo: true
 permalink: card-holder/personal-info.html
 ---
-
 
 {% set header = { titleEn: 'Personal Information', titleAr: 'معلومات شخصية' } %}
 {% include "header.njk" %}
@@ -64,7 +64,7 @@ permalink: card-holder/personal-info.html
             <div class="field">
                 <div class="control">
                     <div class="select is-dark">
-                        <select>
+                        <select class="county" onchange="selectCountry()">
                             <option>Choose your country</option>
                             <option>With options</option>
                         </select>
@@ -78,8 +78,8 @@ permalink: card-holder/personal-info.html
             <div class="field">
                 <div class="control">
                     <div class="select is-dark">
-                        <select>
-                            <option>Choose your province</option>
+                        <select class="states"  onchange="selectState()">
+                            <option>Choose your State</option>
                             <option>With options</option>
                         </select>
                     </div>
@@ -92,8 +92,8 @@ permalink: card-holder/personal-info.html
             <div class="field">
                 <div class="control">
                     <div class="select is-dark">
-                        <select>
-                            <option>Choose a State</option>
+                        <select class="cities">
+                            <option>Choose a city</option>
                             <option>With options</option>
                         </select>
                     </div>

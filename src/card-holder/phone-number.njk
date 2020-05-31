@@ -4,27 +4,28 @@ title: Get Started
 permalink: card-holder/phone-number.html
 ---
 
-
-{% set header = { titleEn: 'Confirm the phone number', titleAr: 'قم بتأكيد رقم الهاتف' } %}
+{% set header = {
+  titleEn: 'Confirm the phone number',
+  titleAr: 'قم بتأكيد رقم الهاتف'
+} %}
 {% include "header.njk" %}
 <div class="header-child-container phone-number-container">
+  <form id="phone-number-form">
     <div class="field has-addons has-addons-right">
-        <p class="control">
-            <span class="select is-dark">
-              <select>
-                <option>+968</option>
-                <option>+969</option>
-                <option>+970</option>
-              </select>
-            </span>
-          </p>
-        <div class="control">
-            <input class="input is-dark" type="tel" placeholder="23 123456" />
-        </div>
+      <p class="control">
+        <span class="select is-dark">
+          <select>
+            <option>+968</option>
+            <option>+969</option>
+            <option>+970</option>
+          </select>
+        </span>
+      </p>
+      <div class="control">
+        <input class="input is-dark" type="tel" name="phone-number" placeholder="23 123456" required/>
+      </div>
     </div>
     <p class="lan" en="For SMS verification, standard rates may apply" ar="للتحقق من الرسائل القصيرة ، قد يتم تطبيق الأسعار القياسية"></p>
-    <a href="card-holder/otp.html">
-        <button class="button orange-button is-danger is-medium is-rounded lan" en="Done" ar="منجز">
-        </button>
-    </a>
+    <button type="submit" class="button orange-button is-danger is-medium is-rounded lan" en="Done" ar="منجز"></button>
+  </form>
 </div>

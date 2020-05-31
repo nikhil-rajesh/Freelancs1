@@ -1,0 +1,57 @@
+<script>
+    $(function () {
+
+        function ajx(tmp, uri, typ = 0) {
+            $.ajax({
+                url: "https://isdoman.net/test/" + uri,
+                data: tmp,
+                cache: false,
+                contentType: false,
+                processData: false,
+                type: "POST",
+                success: function (data) {
+                    $(".category").html(data);
+                    $("html,body").attr("dir", "ltr");
+                    $(".lan").each(function () {
+                        $(this).html($(this).attr("en"));
+                    });
+                },
+                error: function (data) {}
+            });
+        }
+
+        $(document).on("keyup", ".search_term", function () {
+            var item = "";
+            var term = $(this)
+                .val()
+                .trim()
+                .toLowerCase();
+            if (term == "") {
+                $(".search_item").show();
+            } else {
+                $(".search_item").hide();
+                $(".search_item").each(function () {
+                    item = $(this)
+                        .find(".lan")
+                        .text()
+                        .trim()
+                        .toLowerCase();
+                    if (item.includes(term)) {
+                        $(this).show();
+                    }
+                });
+            }
+        });
+
+        $(document).on("click", ".category_item", function (e) {
+            e.preventDefault();
+            localStorage.setItem("sub", $(this).attr("rel").trim());
+            localStorage.setItem("sub_en_title", $(this).find("h1").attr("en").trim());
+            localStorage.setItem("sub_ar_title", $(this).find("h1").attr("ar").trim());
+            location.href = "sub_categories.html";
+        });
+
+        var tmp = new FormData();
+        ajx(tmp, "get_categories.php");
+    });
+</script>

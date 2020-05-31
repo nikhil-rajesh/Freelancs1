@@ -1,0 +1,41 @@
+<script>
+    function selectCountry() {
+        var sel = document.getElementsByClassName("county");
+        var fd = new FormData();
+        fd.append("id", sel[0].selectedOptions[0].value);
+        ajx(fd, "getstates.php", 3);
+    };
+    function selectState() {
+        var sel = document.getElementsByClassName("states");
+        var fd = new FormData();
+        fd.append("id", sel[0].selectedOptions[0].value);
+        ajx(fd, "getcity.php", 4);
+    };
+    function ajx(tmp, uri, typ = 0) {
+        $.ajax({
+            url: "https://isdoman.net/api/" + uri,
+            data: tmp,
+            cache: false,
+            contentType: false,
+            processData: false,
+            type: "POST",
+            success: function (data) {
+                if(typ == 3) {
+                    $(".states").html(data);
+                    translate(localStorage.getItem("lang"));
+                } else if (typ == 4) {                    
+                    $(".cities").html(data);
+                    translate(localStorage.getItem("lang"));
+                }
+            },
+            error: function (data) { }
+        });
+    }
+    function translate(atr) {
+		var d = atr == "en" ? "ltr" : "rtl";
+		$("html,body").attr("dir", d);
+		$(".lan").each(function () {
+			$(this).html($(this).attr(atr));
+		});
+	}
+</script>

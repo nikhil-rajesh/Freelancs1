@@ -226,6 +226,21 @@ $(function () {
 							showNotification(m, t);
 						};
 						break;
+
+					case "personal-info.html":
+						if (typ == 1) {
+							console.log(data);
+							$(".county").html(data);
+							translate(localStorage.getItem("lang"));
+						}
+						break;
+
+					case "home.html":
+						if (typ == 1) {
+							var d = JSON.parse(data);
+							localStorage.setItem("name", d.n);
+							$("#customerName").html(d.n);
+						}
 				}
 			},
 			error: function (data) {
@@ -313,6 +328,30 @@ $(function () {
 		ajx(new FormData(this), "forgotten.php", 3);
 	});
 
+	$(document).on("submit", "#card-number-form", function (e) {
+		e.preventDefault();
+		let fd = new FormData(this);
+		localStorage.setItem("card-number", fd.get('card-number'));
+		location.href = "card-holder/phone-number.html";
+	});
+
+	$(document).on("submit", "#phone-number-form", function (e) {
+		e.preventDefault();
+		let fd = new FormData(this);
+		localStorage.setItem("phone-number", fd.get('phone-number'));
+		location.href = "card-holder/otp.html";
+	});
+
+	$(document).on("submit", "#otp-form", function (e) {
+		e.preventDefault();
+		let fd = new FormData(this);
+
+		localStorage.setItem("otp", fd.get('otp'));
+		//Rest of the logic needs to be implented (calling backed)
+
+		location.href = "card-holder/personal-info.html";
+	});
+
 	$(document).on("submit", "#changePasswordForm", function (e) {
 		e.preventDefault();
 		let fd = new FormData(this)
@@ -381,8 +420,38 @@ $(function () {
 				$("#pleaseRegisterModal").addClass("is-active");
 			}
 			break;
+
+		case "personal-info.html":
+			ajx("", "getcountries.php", 1);
+			break;
+		
+		case "home.html":
+			tmp = new FormData();
+			tmp.append("id", localStorage.getItem("logu"));
+			ajx(tmp, "getprofile.php", 1);
+			break;
+	}
+	if (localStorage.getItem("logsts") == 0) {
+		var pages = [
+			"categories.html",
+			"signin.html",
+			"index.html",
+			"faq.html",
+			"about.html",
+			"settings.html",
+			"merchant.html",
+			"card-number.html",
+			"otp.html",
+			"personal-info.html",
+			"phone-number.html"
+		]
+		if (!pages.includes(pg))
+			location.href = "categories.html"
 	}
 	if (localStorage.getItem("lang") == null)
 		localStorage.setItem("lang", "en");
 	translate(localStorage.getItem("lang"));
+	if(pg == "user_welcome.html")
+		$("#welcomeName").html("Welcome " + localStorage.getItem("name"));
+	$("#customerName").html(localStorage.getItem("name"));
 });

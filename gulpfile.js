@@ -10,7 +10,7 @@ const concat  = require('gulp-concat');
 gulp.task('css', function() {
   return gulp.src('./src/_assets/stylesheets/app.scss')
     .pipe(sass({
-      outputStyle: 'compressed'
+      // outputStyle: 'compressed'
     })
     .on('error', sass.logError))
     .pipe(gulp.dest('./src/static/css'));

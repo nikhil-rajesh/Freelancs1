@@ -17,7 +17,7 @@
         <div class="sidebar">
             <div class="sidebar_title" dir="ltr">
                 <img src="static/img/card.png" alt="">
-                <h1>Name</h1>
+                <h1 id="customerName">Name</h1>
             </div>
             <ul>
                 <li>
@@ -91,7 +91,7 @@
                 <div class="card">
                     <h1>SUPPORT</h1>
                     <a href="tel:+96824505563">Mobile : +968 24505563</a>
-                    <a href="mailto:someone@example.com">Email : someone@example.com</a>
+                    <a href="mailto:someone@example.com">Email : admin@smarthammer.biz</a>
                 </div>
             </div>
             <button class="modal-close is-large" aria-label="close"></button>
@@ -102,4 +102,5 @@
     <script src="static/js/jquery.min.js"></script>
     <script src="static/js/notify.js"></script>
     <script src="static/js/engine.js"></script>
+    {% if categories %}{% include "categoriesFunctions.njk" %}{% endif %}
 </html>

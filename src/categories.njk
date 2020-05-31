@@ -1,33 +1,37 @@
 ---
 layout: base_sidebar.njk
 title: Get Started
+categories: true
 permalink: categories.html
 ---
-{% set header = { titleEn: 'Categories', titleAr: 'التصنيفات' } %}
+{% set header = {
+    titleEn: 'Categories',
+    titleAr: 'التصنيفات'
+} %}
 {% include "header.njk" %}
 
 <div class="modal" id="pleaseRegisterModal">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <div class="card">
-        <i class="fas fa-5x fa-exclamation-circle"></i>
-        <h1 class="lan" en="Notification" ar="تنبيه"></h1>
-        <p class="lan" en="Dear User, Kindly buy an ISD card to enable full features." ar="عزيزي المستخدم ، يرجى شراء بطاقة ISD لتمكين الميزات الكاملة."></p>
-        <div class="buttons">
-            <button class="button is-info lan closePleaseRegisterModal" en="OK" ar="حسنا"></button>
-            <a href="faq.html">
-                <button class="button is-info lan" en="FAQ" ar="التعليمات"></button>
-            </a>
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="card">
+            <i class="fas fa-5x fa-exclamation-circle"></i>
+            <h1 class="lan" en="Notification" ar="تنبيه"></h1>
+            <p class="lan" en="Dear User, Kindly buy an ISD card to enable full features." ar="عزيزي المستخدم ، يرجى شراء بطاقة ISD لتمكين الميزات الكاملة."></p>
+            <div class="buttons">
+                <button class="button is-info lan closePleaseRegisterModal" en="OK" ar="حسنا"></button>
+                <a href="faq.html">
+                    <button class="button is-info lan" en="FAQ" ar="التعليمات"></button>
+                </a>
+            </div>
         </div>
     </div>
-  </div>
-  <button class="modal-close is-large" aria-label="close"></button>
+    <button class="modal-close is-large" aria-label="close"></button>
 </div>
 <div class="categories_container bottom_bar_margin">
     <div class="search">
         <div class="field has-addons">
             <p class="control has-icons-left">
-                <input class="input" type="text" placeholder="Search">
+                <input class="input search_term" type="text" placeholder="Search">
                 <span class="icon is-small is-left">
                     <i class="fas fa-search"></i>
                 </span>
@@ -42,58 +46,34 @@ permalink: categories.html
             <div class="card-content">
                 <div class="select is-rounded">
                     <select>
-                        <option>Rounded dropdown</option>
+                        <option>All Countries</option>
                         <option>With options</option>
                     </select>
                 </div>
                 <div class="select is-rounded">
                     <select>
-                        <option>Rounded dropdown</option>
+                        <option>All States</option>
                         <option>With options</option>
                     </select>
                 </div>
                 <div class="select is-rounded">
                     <select>
-                        <option>Rounded dropdown</option>
+                        <option>All Cities</option>
                         <option>With options</option>
                     </select>
                 </div>
+                <div class="select is-rounded">
+                    <select>
+                        <option>All Segments</option>
+                        <option>With options</option>
+                    </select>
+                </div>
+
                 <button class="button is-info is-rounded">Search</button>
             </div>
         </div>
     </div>
-    <div class="columns is-mobile is-multiline">
-        <div class="column is-half">
-            <div class="card"><img src="static/img/merchant-shop.png" alt="">
-                <h1 class="service-title">Service</h1>
-            </div>
-        </div>
-        <div class="column is-half">
-            <div class="card"><img src="static/img/merchant-shop.png" alt="">
-                <h1 class="service-title">Service</h1>
-            </div>
-        </div>
-        <div class="column is-half">
-            <div class="card"><img src="static/img/merchant-shop.png" alt="">
-                <h1 class="service-title">Service</h1>
-            </div>
-        </div>
-        <div class="column is-half">
-            <div class="card"><img src="static/img/merchant-shop.png" alt="">
-                <h1 class="service-title">Service</h1>
-            </div>
-        </div>
-        <div class="column is-half">
-            <div class="card"><img src="static/img/merchant-shop.png" alt="">
-                <h1 class="service-title">Service</h1>
-            </div>
-        </div>
-        <div class="column is-half">
-            <div class="card"><img src="static/img/merchant-shop.png" alt="">
-                <h1 class="service-title">Service</h1>
-            </div>
-        </div>
-    </div>
+    <div class="columns is-mobile is-multiline category"></div>
 </div>
 <script>
     let filter_container = document.querySelector('.categories_container');
@@ -101,8 +81,12 @@ permalink: categories.html
     let filter = filter_container.querySelector('.filter');
     filterbutton.addEventListener('click', (e) => {
         let currentState = filter.getAttribute('filter-state');
-        let newState = currentState == 'hidden' ? 'visible' : 'hidden';
+        let newState = currentState == 'hidden'
+            ? 'visible'
+            : 'hidden';
         filter.setAttribute('filter-state', newState);
-        filter.classList.replace(currentState, newState);
+        filter
+            .classList
+            .replace(currentState, newState);
     })
 </script>
