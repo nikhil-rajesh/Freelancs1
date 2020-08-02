@@ -7,104 +7,106 @@ permalink: card-holder/personal-info.html
 
 {% set header = { titleEn: 'Personal Information', titleAr: 'معلومات شخصية' } %}
 {% include "header.njk" %}
-<div class="info-container container">
-    <div class="field is-horizontal">
-        <div class="field-body">
-            <div class="field">
-                <p class="control">
-                    <input class="input  is-dark" type="text" placeholder="First Name">
-                </p>
-            </div>
-            <div class="field">
-                <p class="control">
-                    <input class="input  is-dark" type="text" placeholder="Last Name">
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="field is-horizontal">
-        <div class="field-body">
-            <div class="field">
-                <p class="control">
-                    <input class="input  is-dark" type="text" placeholder="Email">
-                </p>
-            </div>
-            <div class="field">
-                <p class="control">
-                    <input class="input  is-dark" type="text" placeholder="Confirm Email">
-                </p>
+<div style="margin-top: 20vh;">
+    <div class="info-container container">
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <input class="input  is-dark" type="text" placeholder="First Name">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input class="input  is-dark" type="text" placeholder="Last Name">
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="field is-horizontal">
-        <div class="field-body">
-            <div class="field">
-                <p class="control">
-                    <input class="input  is-dark" type="text" placeholder="Password">
-                </p>
-            </div>
-            <div class="field">
-                <p class="control">
-                    <input class="input  is-dark" type="text" placeholder="Confirm Password">
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="field is-horizontal">
-        <div class="field-body">
-            <div class="field">
-                <p class="control" id="date-picker-control">
-                    <input class="input" id="date-picker" type="date" placeholder="Confirm Password">
-                </p>
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <input class="input  is-dark" type="text" placeholder="Email">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input class="input  is-dark" type="text" placeholder="Confirm Email">
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="field is-horizontal">
-        <div class="field-body">
-            <div class="field">
-                <div class="control">
-                    <div class="select is-dark">
-                        <select class="county" onchange="selectCountry()">
-                            <option>Choose your country</option>
-                            <option>With options</option>
-                        </select>
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <input class="input  is-dark" type="text" placeholder="Password">
+                    </p>
+                </div>
+                <div class="field">
+                    <p class="control">
+                        <input class="input  is-dark" type="text" placeholder="Confirm Password">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field">
+                    <p class="control" id="date-picker-control">
+                        <input class="input" id="date-picker" type="date" placeholder="Confirm Password">
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <div class="select is-dark">
+                            <select class="county" onchange="selectCountry()">
+                                <option>Choose your country</option>
+                                <option>With options</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="field is-horizontal">
-        <div class="field-body">
-            <div class="field">
-                <div class="control">
-                    <div class="select is-dark">
-                        <select class="states"  onchange="selectState()">
-                            <option>Choose your State</option>
-                            <option>With options</option>
-                        </select>
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <div class="select is-dark">
+                            <select class="states"  onchange="selectState()">
+                                <option>Choose your State</option>
+                                <option>With options</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="field is-horizontal">
-        <div class="field-body">
-            <div class="field">
-                <div class="control">
-                    <div class="select is-dark">
-                        <select class="cities">
-                            <option>Choose a city</option>
-                            <option>With options</option>
-                        </select>
+        <div class="field is-horizontal">
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <div class="select is-dark">
+                            <select class="cities">
+                                <option>Choose a city</option>
+                                <option>With options</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="center">
-        <a href="signin.html">
-            <button class="button orange-button is-rounded is-danger is-medium lan" en="Done" ar="منجز">
-            </button>
-        </a>
+        <div class="center">
+            <a href="signin.html">
+                <button class="button orange-button is-rounded is-danger is-medium lan" en="Done" ar="منجز">
+                </button>
+            </a>
+        </div>
     </div>
 </div>

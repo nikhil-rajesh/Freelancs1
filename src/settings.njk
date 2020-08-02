@@ -9,7 +9,11 @@ permalink: settings.html
 
 <div class="settings_container container bottom_bar_margin">
 	<a id="changePasswordButton">
-		<div class="lan" en="Change Password" ar="تغيير كلمة المرور"></div>
+		<div class="lan" en="Change Password" ar="تغيير صورة الملف الشخصي"></div>
+		<i class="fas fa-arrow-right"></i>
+	</a>
+	<a id="changeProfilePic">
+		<div class="lan" en="Change Profile Picture" ar="غير صورتك الشخصية"></div>
 		<i class="fas fa-arrow-right"></i>
 	</a>
 	<a href="">
@@ -33,39 +37,74 @@ permalink: settings.html
 	</a>
 </div>
 <div class="modal" id="chooseLanguageModal">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-        <div class="card">
-            <a href="" class="cl" r="en">
-                <button class="button is-info">English</button>
-            </a>
-            <a href="" class="cl" r="ar">
-                <button class="button is-info">Arabic</button>
-            </a>
-        </div>
-    </div>
-    <button class="modal-close is-large" aria-label="close"></button>
+	<div class="modal-background"></div>
+	<div class="modal-content">
+		<div class="card">
+			<a href="" class="cl" r="en">
+				<button class="button is-info">English</button>
+			</a>
+			<a href="" class="cl" r="ar">
+				<button class="button is-info">Arabic</button>
+			</a>
+		</div>
+	</div>
+	<button class="modal-close is-large" aria-label="close"></button>
 </div>
 <div class="modal" id="changePasswordModal">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-        <div class="card">
+	<div class="modal-background"></div>
+	<div class="modal-content">
+		<div class="card">
 			<form id="changePasswordForm">
 				<div class="field form-group">
 					<div class="control">
-					  <label class="label lan" en="New Password" ar="كلمة السر الجديدة"></label>
-					  <input type="password" class="input is-info form-control" name="pass" required />
+						<label class="label lan" en="New Password" ar="كلمة السر الجديدة"></label>
+						<input type="password" class="input is-info form-control" name="pass" required />
 					</div>
-				  </div>
-				  <div class="field form-group">
+				</div>
+				<div class="field form-group">
 					<div class="control">
-					  <label class="label lan" en="Confirm Password" ar="تأكيد كلمة المرور"></label>
-					  <input type="password" class="input is-info form-control" name="conpass" required />
+						<label class="label lan" en="Confirm Password" ar="تأكيد كلمة المرور"></label>
+						<input type="password" class="input is-info form-control" name="conpass" required />
 					</div>
-				  </div>
-				  <button class="button is-danger is-rounded lan" type="submit" en="Submit" ar="إرسال"></button>
+				</div>
+				<button class="button is-danger is-rounded lan" type="submit" en="Submit" ar="إرسال"></button>
 			</form>
-        </div>
-    </div>
-    <button class="modal-close is-large" aria-label="close"></button>
+		</div>
+	</div>
+	<button class="modal-close is-large" aria-label="close"></button>
 </div>
+<div class="modal" id="changeProfilePicModal">
+	<div class="modal-background"></div>
+	<div class="modal-content">
+		<div class="card">
+			<form id="profilePicForm">
+				<div class="file">
+					<label class="file-label">
+						<input type="file" class="file-input" name="image" accept="image/*" onchange="preview_image(event)">
+						<span class="file-cta">
+							<span class="file-icon">
+								<i class="fas fa-upload"></i>
+							</span>
+							<span class="file-label">
+								Choose a file…
+							</span>
+						</span>
+					</label>
+				</div>
+				<img id="output_image" />
+				<button type="submit" class="button is-primary is-rounded lan" en="Change" ar="يتغيرون"></button>
+			</form>
+		</div>
+	</div>
+	<button class="modal-close is-large" aria-label="close"></button>
+</div>
+<script type='text/javascript'>
+	function preview_image(event) {
+		var reader = new FileReader();
+		reader.onload = function () {
+			var output = document.getElementById('output_image');
+			output.src = reader.result;
+		}
+		reader.readAsDataURL(event.target.files[0]);
+	}
+</script>

@@ -275,6 +275,11 @@ $(function () {
 		$("#chooseLanguageModal").addClass("is-active");
 	});
 
+	$(document).on("click", "#changeProfilePic", function (e) {
+		e.preventDefault();
+		$("#changeProfilePicModal").addClass("is-active");
+	});
+
 	$(document).on("click", ".modal-close", function (e) {
 		$("#chooseLanguageModal").removeClass("is-active");
 		$("#merchantFormModal").removeClass("is-active");
@@ -283,6 +288,7 @@ $(function () {
 		$("#shareModal").removeClass("is-active");
 		$("#supportModal").removeClass("is-active");
 		$("#changePasswordModal").removeClass("is-active");
+		$("#changeProfilePicModal").removeClass("is-active");
 	});
 
 	$(document).on("click", ".cl", function (e) {

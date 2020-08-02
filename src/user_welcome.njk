@@ -3,7 +3,10 @@ layout: base_sidebar.njk
 title: Get Started
 permalink: user_welcome.html
 ---
-{% set header = { titleEn: 'Welcome Mohammed', titleAr: 'أهلا بك Mohammed' } %}
+{% set header = {
+    titleEn: 'Welcome Mohammed',
+    titleAr: 'أهلا بك Mohammed'
+} %}
 {% include "header.njk" %}
 
 <div class="user_welcome_container container">
@@ -11,6 +14,9 @@ permalink: user_welcome.html
         <div class="photo_points">
             <img class="user_pic" src="static/img/card-holder.png" alt="">
             <div class="points">
+                <a href="#" class="addPoints">
+                    <img src="static/img/add-points.png" alt="">
+                </a>
                 <img src="static/img/points.png" alt="">
                 <p>190</p>
             </div>
@@ -65,7 +71,7 @@ permalink: user_welcome.html
         </div>
     </div>
     <div class="section_4">
-        <img src="static/img/blank_card.png" alt="">
+        <img src="static/img/blank_card.jpeg" alt="">
         <p class="card-number">1234 1234 1234</p>
     </div>
     <div class="section_5 columns is-mobile">
@@ -77,6 +83,7 @@ permalink: user_welcome.html
         <div class="column is-4">
             <a class="qr_code" href="payment.html">
                 <img src="static/img/qr-code.png" alt="">
+                <p>Scan QR</p>
             </a>
         </div>
         <div class="column">
@@ -87,3 +94,6 @@ permalink: user_welcome.html
         </div>
     </div>
 </div>
+<script>
+    document.querySelector("header").style.position = "absolute";
+</script>
