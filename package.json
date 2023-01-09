@@ -19,7 +19,7 @@
     "del-cli": "^3.0.0",
     "html-minifier": "^4.0.0",
     "js-yaml": "^3.13.1",
-    "luxon": "^1.23.0",
+    "luxon": "^1.28.1",
     "postcss-cli": "^7.1.1",
     "tailwindcss": "^1.4.4",
     "webpack": "^4.43.0",
